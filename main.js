@@ -86,9 +86,17 @@ console.assert(cat.growl() === "meow");
 // prototype that is called `squeal` that returns the secret string.
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
+function KeepSecret = (secret) {
+  this.private = function () {
+    return secret
+
+  }
+}
 
 
-
+KeepSecret.prototype.squeal = function () {
+  return this.private()
+}
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
@@ -116,8 +124,25 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
+function Key () {
+
+}
+
+function Safe (gold, key) {
+  this.hiddedn = function () {
+    return gold
+  }
+  this.safeKey = function () {
+    return key
+  }
+}
 
 
+Safe.prototype..unlock = function (otherKey) {
+  if (otherKey === this.safeKey()) {
+    return this.hidden()
+  }
+}
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
